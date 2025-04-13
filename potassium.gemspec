@@ -34,4 +34,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "octokit", "~> 4.18"
   spec.add_runtime_dependency "rails", Potassium::RAILS_VERSION
   spec.add_runtime_dependency "semantic", "~> 1.4"
+  spec.add_runtime_dependency "kamal", "~> 2.5.3"
 end

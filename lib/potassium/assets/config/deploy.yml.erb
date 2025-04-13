@@ -1,0 +1,49 @@
+service: <%= @app_name %>
+image: <%= @registry %>/<%= @app_name %>
+
+servers:
+  web:
+    hosts:
+      - <%= @server_ip %>
+
+proxy:
+  ssl: true
+  host: <%= @app_domain %>
+
+registry:
+  username: <%= ENV['DOCKER_USERNAME'] %>
+  password:
+    - DOCKER_REGISTRY_PASSWORD
+
+env:
+  secret:
+    - RAILS_MASTER_KEY
+    - DOCKER_REGISTRY_PASSWORD
+  clear:
+    RAILS_ENV: production
+    RACK_ENV: production
+    SOLID_QUEUE_IN_PUMA: true
+
+aliases:
+  console: app exec --interactive --reuse "bin/rails console"
+  shell: app exec --interactive --reuse "bash"
+  logs: app logs -f
+  dbc: app exec --interactive --reuse "bin/rails dbconsole"
+
+volumes:
+  - "<%= @app_name %>_storage:/rails/storage"
+
+asset_path: /rails/public/assets
+
+builder:
+  arch: amd64
+
+accessories:
+  postgres
+    image: postgres:15
+    host: 127.0.0.1
+    port: 5432
+    env:
+      clear:
+        POSTGRES_DB: <%= @app_name %>_production
+        POSTGRES_USER: postgres

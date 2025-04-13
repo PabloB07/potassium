@@ -210,6 +210,14 @@ module Potassium::CliOptions # rubocop:disable Metrics/ModuleLength
       negatable: true,
       default_value: false,
       default_test_value: false
+    },
+    {
+      type: :switch,
+      name: 'kamal',
+      desc: 'Whether to set up Kamal for deployment',
+      negatable: true,
+      default_value: false,
+      default_test_value: false
     }
   ]
 

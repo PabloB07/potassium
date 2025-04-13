@@ -10,6 +10,7 @@ end
 
 run_action(:asking) do
   ask :database
+  ask :kamal
   ask :devise
   ask :admin
   ask :google_tag_manager
@@ -37,6 +38,7 @@ run_action(:recipe_loading) do
   create :env
   create :database_container
   create :database
+  create :kamal
   create :annotate
   create :data_migrate
   create :listen
