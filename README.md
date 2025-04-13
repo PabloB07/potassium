@@ -47,6 +47,7 @@ This will create a project with the following configuration:
   17. `google_tag_manager`: `true`
   18. `test`: `true`
   19. `spring`: `true`
+  20. `kamal`: `true`
 
 The remaining question will be asked as usual.
 
