@@ -1,5 +1,8 @@
 # Potassium [![Circle CI](https://circleci.com/gh/platanus/potassium.svg?style=svg)](https://circleci.com/gh/platanus/potassium)
 
+![potassium](https://github.com/user-attachments/assets/9d6a0439-cdd8-45ef-92e8-453e57d46f22)
+
+
 A Rails application generator from [Platanus](https://github.com/platanus), inspired by [Suspenders](https://github.com/thoughtbot/suspenders).
 
 ## Installation
